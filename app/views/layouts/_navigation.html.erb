@@ -13,11 +13,8 @@
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Compte
-        </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <span class="dropdown-item"> <li><%= link_to "Profile", user_path(current_user) %></li></span>
+          <span class="dropdown-item"> <li><%= link_to "Mon Profil", user_path(current_user) %></li></span>
           <div class="dropdown-divider"></div>
           <span class="dropdown-item"> <li><%= link_to "Se déconnecter", logout_path, method: :delete %></li></span>
         </div>

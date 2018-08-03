@@ -10,7 +10,7 @@ before_action :set_find_id, only: [:edit, :update, :show, :destroy]
     @user = User.new(user_params)
     if @user.save
         session[:user_id] = @user.id
-        flash[:success] = "New user #{@user.username} created !"
+        flash[:success] = "New user created !"
         redirect_to user_path(@user)
     else
         render 'new'
