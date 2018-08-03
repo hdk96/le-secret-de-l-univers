@@ -1,21 +1,19 @@
 <div class="container">
 	<h1>👨‍💻 👨🏾‍💻 Bienvenue sur notre super site 👩🏿‍💻 👩🏼‍💻</h1>
 
-	<h1>Users</h1>
+	
 
-<a href="<%= signup_path %>" target="_blank">Sign Up</a>
-<a href="<%= login_path%>">Login</a>
-<% @users.each do |user| %>
-	<h2><%= user.email %></h2>
-	<a href="<%= user_path(user.id)%>" target="_blank">see profil</a> 
-<% end %>
-
-<!-- if user is login -->
-	<p> 
-		<%= link_to  'Réponse à La Grande Question sur l\'univers.', '/pages/secret_page', target:"_blank" %>		
-	</p>
-<!-- if user is not login 
-     print login page 
-     -->
+	<% if not logged_in? %>
+	<h3>Connectez vous pour découvrir la réponse a la grande question sur l'univers!!!</h3>
+	
+	  <li><%= link_to "Se connecter", login_path %></li>
+      <li><%= link_to "S'inscrire", signup_path %></li>
+      <% else %>
+      	<h3>Vous etes connecter au cercle privée des illuminée! </h3>
+		<p> 
+			<%= link_to  'Découvre la Réponse à La Grande Question sur l\'univers.', '/pages/secret_page', target:"_blank" %>		
+		</p>
+      <% end %>
+     
 
 </div>
